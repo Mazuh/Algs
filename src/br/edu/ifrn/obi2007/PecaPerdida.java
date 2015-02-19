@@ -14,18 +14,21 @@ public class PecaPerdida {
         
         // ENTRADA DE DADOS
         System.out.print("ENTRADA\nQuantidade de peças: ");
-        int n = Integer.valueOf(input.nextLine());
+        int n = Integer.valueOf(input.nextLine()); // um inteiro N
         System.out.print("Peças: ");
-        String entradaDePecas = input.nextLine();
+        String entradaDePecas = input.nextLine(); // N-1 valores inteiros 
         
-        if (entradaDePecas.length() > n) System.exit(0); // ERRO
+        String[] pecas = entradaDePecas.split(" "); // quebrando entrada em um vetor
         
-        String[] pecas = entradaDePecas.split(" ");
-        
-        Arrays.sort(pecas);
+        Arrays.sort(pecas); // ordenando peças
         
         // SAÍDA
-        // ... INCOMPLETO
+        for(int i = 0; i < pecas.length; i++){
+            if (Integer.valueOf(pecas[i]) != i+1){
+                System.out.println(i+1);
+                break;
+            }
+        }
         
     }
     
