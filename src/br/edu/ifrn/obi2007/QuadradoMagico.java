@@ -10,15 +10,19 @@ public class QuadradoMagico {
         Scanner input = new Scanner(System.in);
         
         int n = input.nextInt(); // tamanho
+        
+        Integer[][] matrizInt = new Integer[n][n];
         int matriz[][] = new int[n][n];
         
         System.out.println();
         
         for (int i = 0; i < n; i++){
-            String linhaAux[] = (input.nextLine()).split(" ");
+            
+            String linhaLidaStr = input.nextLine();
+            String[] linhaLida = linhaLidaStr.split(" ");
             
             for (int j = 0; j < n; j++){
-                matriz[i][j] = Integer.valueOf(linhaAux[j]);
+                matrizInt[i][j] = Integer.valueOf(linhaLida[j]);
             }
         }
         
