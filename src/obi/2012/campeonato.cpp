@@ -1,3 +1,4 @@
+// Alg júnior pra treinar uso de operador ternário
 // http://olimpiada.ic.unicamp.br/pdf/provas/ProvaOBI2012_prog_f1nj.pdf
 
 #include <iostream>
