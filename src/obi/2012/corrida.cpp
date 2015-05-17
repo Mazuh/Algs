@@ -17,12 +17,15 @@ int main(){
     cin >> c;
     cin >> n;
     
-    // PROCESSAMENTO
+    
+    // CÁLCULO
     int resto = c % n; // o C percorre completamente N o quanto
                     // for possível. Depois disso, o resto
                     // é o que, obviamente, resta pra
                     // correr.
     
+    
+    // OUTPUT
     cout << resto << endl;
     
     return 0;
