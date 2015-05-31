@@ -1,0 +1,97 @@
+body{
+    background-color: gray;
+}
+
+form{
+    float: left;
+	width: 175px;
+    margin: 15px;
+	border: solid 1px #ddd;
+	padding: 10px;
+	box-shadow: 6px 6px 6px black;
+	background: green;
+}
+
+h1{
+    color: white;
+    background-color: black;
+    font-family: cursive;
+    text-align: center;
+}
+
+h1 span{
+    color: lightgray;
+    font-size: 0.5em;
+}
+
+h2{
+	margin-top: 0px;
+	color: white;
+}
+
+h2 span{
+	font-size: 12px;
+}
+
+#registros{
+	width: 350px;
+    margin-right: 50px;
+    padding: 10px;
+    overflow: auto;
+	height: 400px;
+	background: white;
+    float: right;
+    box-shadow: 6px 6px 3px black;
+    border: 1px solid blue;
+}
+
+.btn_pequeno{
+	padding: 2px;
+	margin: 3px;
+	width: 34px;
+	height: 30px;
+	background-color: lightgray;
+}
+
+.btn_largo{
+	padding: 2px;
+	margin: 3px;
+	width: 78px;
+	height: 30px;
+	background-color: lightgray;
+}
+
+#igual{
+	padding: 2px;
+	margin: 3px;
+	width: 70px;
+	height: 30px;
+	background: red;
+}
+
+.visor{
+	width: 170px;
+	background: white;
+	font-size: 16px;
+}
+
+.cor_decimal{
+    background-color: green;
+}
+
+.cor_binaria{
+    background-color: red;
+}
+
+.cor_neutra{
+    color: white;
+    background-color: black;
+}
+
+.borda_decimal{
+    border: 2px solid green;
+}
+
+.borda_binaria{
+    border: 2px solid red;
+}
