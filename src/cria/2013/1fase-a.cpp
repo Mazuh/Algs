@@ -1,3 +1,7 @@
+/*
+http://www.rioinfo.com.br/media/uploads/prova-eliminatoria.pdf
+*/
+
 #include <iostream>
 #include <string>
 
