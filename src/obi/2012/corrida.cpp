@@ -2,7 +2,7 @@
 http://olimpiada.ic.unicamp.br/pratique/programacao/nivel1/2012f1p1_corrida
 */
 
-#include <iostream>
+#include <cstdio>
 
 using namespace std;
 
@@ -12,21 +12,15 @@ int main(){
     int c; // o quanto pretende correr
     int n; // comprimento da pista
     
-    
     // INPUTS
-    cin >> c;
-    cin >> n;
-    
-    
-    // CÁLCULO
-    int resto = c % n; // o C percorre completamente N o quanto
-                    // for possível. Depois disso, o resto
-                    // é o que, obviamente, resta pra
-                    // correr.
-    
+    scanf("%d", &c);
+    scanf("%d", &n);
     
     // OUTPUT
-    cout << resto << endl;
+    printf("%d\n", (c % n));// o C percorre completamente N o quanto
+                    // for possível. Depois disso, o resto
+                    // é o que, obviamente, resta pra
+                    // correr.    
     
     return 0;
 }
