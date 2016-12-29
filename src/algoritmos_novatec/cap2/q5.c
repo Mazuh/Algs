@@ -8,18 +8,24 @@ será 8452.
 
 int main(void){
 
-    char digits[4];
+    int num, reverse;
     int digitsQtt = 4;
 
-    for(int i = 0; i < digitsQtt; i++){
-        scanf("%c", &digits[i]);
-    }
-    
-    for(int i = digitsQtt-1; i > -1; i--){
-        printf("%c", digits[i]);
-    }
+    scanf("%d", &num); // full
 
-    printf("\n");
+    reverse = (int) (num / 1000) * 1;
+    num = num % 1000;
+    
+    reverse += ((int) (num / 100)) * 10;
+    num = num % 100;
+    
+    reverse += ((int) (num / 10)) * 100;
+    num = num % 10;
+
+    reverse += ((int) num / 1) * 1000;
+    num = num % 1;
+
+    printf("%d\n", reverse);
 
     return 0;
 }
