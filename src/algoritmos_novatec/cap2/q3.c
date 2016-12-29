@@ -8,14 +8,14 @@ int main(void){
 
     float input;
     float sum = 0;
-    int qtdNums = 4;
+    int qttNums = 4;
 
-    for (int i = 0; i < qtdNums; i++){
+    for (int i = 0; i < qttNums; i++){
         scanf("%f", &input);
         sum += input;
     }
 
-    printf("%f\n", (sum / qtdNums));
+    printf("%f\n", (sum / qttNums));
 
     return 0;
 }
