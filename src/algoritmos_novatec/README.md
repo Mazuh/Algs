@@ -1,8 +1,8 @@
 # Algoritmos e Programação
 ## Teoria e Prática
 
-Resolução dos exerccios propostos pelo livro.
+Resoluções próprias em C dos exercícios propostos pelo livro.
 
 - Autoria: Marco Medina e Cristina Fertig.
-- Editora: Novatec.
+- Editora: Novatec, São Paulo, SP.
 - Edição: 2ª, 2005.
