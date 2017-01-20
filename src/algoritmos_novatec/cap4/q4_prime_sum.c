@@ -1,5 +1,5 @@
 /*
-Faça um algoritmo que calcule a soma dos números entre 1 e 100.
+Faça um algoritmo que calcule a soma dos números primos entre 1 e 100.
 */
 
 #include <stdio.h>
