@@ -11,14 +11,25 @@ int main(void){
 
     int a, b;
 
-    scanf("%d", &a);
-    scanf("%d", &b);
+    scanf("%d %d", &a, &b);
 
-    int gcd = 0; // greatest common divisor
+    // analysing only positive divisors...
+    // e.g.: divisors of number 4 are +-1, +-2, +- 1,
+    // so the greatest of them will always be a positive value.
+    if (a < 0)
+        a = -a;
     
-    for(int i = 1; i <= a && i <= b; i++){
+    if (b < 0)
+        b = -b;
+
+    // greatest common divisor
+    int gcd = a < b ? a : b;
+    
+    // why don't start by 0? Cause I'm looking for the greatest of them!
+    for(int i = gcd; i >= 1; i--){
         if ((a % i == 0) && (b % i == 0)){
             gcd = i;
+            break;
         }
     }
 
