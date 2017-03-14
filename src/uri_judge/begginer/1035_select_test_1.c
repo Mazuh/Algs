@@ -1,21 +1,19 @@
 /**
-https://www.urionlinejudge.com.br/judge/en/problems/view/1098
+https://www.urionlinejudge.com.br/judge/en/problems/view/1035
 */
 
 #include <stdio.h>
 
 int main(){
 
-	float i = 0, j;
+	int a, b, c, d;
 
-	print("I=0 J=1\nI=0 J=2\nI=0 J=3");
+	scanf("%d %d %d %d", &a, &b, &c, &d);
 
-	for (i = 0.2; i < 2; i+=0.2){
-		printf("I=%.2f ");
-		for (j = 1; j <= 3; j++){
-			printf("J=%0.2f\n");
-		}
-	}
+	if ((b > c) && (d > a) && (c+d > a+b) && (c > 0 && d > 0) && !(a % 2))
+		printf("Valores aceitos\n");
+	else
+		printf("Valores nao aceitos\n");
 
     return 0;
 }
