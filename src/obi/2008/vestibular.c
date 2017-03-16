@@ -13,8 +13,8 @@ int main(){
 	char correctAnswers[quizzQtt+1];
 	char studentAnswers[quizzQtt+1];
 	
-	scanf("%s", &correctAnswers);
-	scanf("%s", &studentAnswers);
+	scanf("%s", correctAnswers);
+	scanf("%s", studentAnswers);
 	
 	int score = 0;
 	int i;
