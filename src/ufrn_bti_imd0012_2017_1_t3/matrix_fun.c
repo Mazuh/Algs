@@ -5,21 +5,75 @@ Having fun with multidimensinal arrays.
 #include <stdio.h>
 
 
-/**
-TODO: Dada uma matriz inteira Maxb, imprima o número de linhas e colunas 
-nulas (apenas com valores zerados, matematicamente falando)
-da matriz.
-*/
-
+/* default constants */ 
 #define ROWS_QTT 4
 #define COLS_QTT 5
 
-int main(){
+/**
+Dada uma matriz inteira Maxb, imprima o número de linhas e colunas 
+nulas (apenas com valores zerados, matematicamente falando)
+da matriz.
+*/
+int main1(){
 
-	/*
-	Dada uma matriz Amxm, imprima quantas vezes se repete cada valor.
-	Should be a function like writeRepeatedValuesQtts(args).
-	*/
+	int matrix[ROWS_QTT][COLS_QTT] = {
+		{1, 0, 0, 1, 0},
+		{1, 1, 0, 1, 0},
+		{0, 0, 0, 0, 0},
+		{1, 1, 0, 1, 0}
+	};
+
+	int i, j;
+
+	char foundNotNull;
+	int linesNotNullQtt = 0;
+
+	/* searching for not null rows */
+	for(i = 0; i < ROWS_QTT; i++){
+		foundNotNull = 0;
+
+		for(j = 0; j < COLS_QTT; j++){
+			if (matrix[i][j]){
+				foundNotNull = 1;
+				break;
+			}
+		}
+
+		if (!foundNotNull){
+			linesNotNullQtt++;
+		}
+
+	}
+
+	/* searching for not null collumns */
+	for(i = 0; i < COLS_QTT; i++){
+		foundNotNull = 0;
+
+		for(j = 0; j < ROWS_QTT; j++){
+			if (matrix[j][i]){
+				foundNotNull = 1;
+				break;
+			}
+		}
+
+		if (!foundNotNull){
+			linesNotNullQtt++;
+		}
+
+	}
+
+	/* print total of not null lines */
+	printf("Há %d fileiras não nulas\n.", linesNotNullQtt);
+	
+	return 0;
+}
+
+
+/*
+Dada uma matriz Amxm, imprima quantas vezes se repete cada valor.
+*/
+int main2(){
+
 	int matrix[ROWS_QTT][COLS_QTT] = {
 		{2, 3, 18, 9, 8},
 		{1, 15, 2, 9, 6},
@@ -68,3 +122,11 @@ int main(){
     return 0;
 
 }
+
+/* default main: call main1 or main2 to test these algorithms */
+int main(){
+	printf("Don't be silly...\nBefore executing a stranger's code in your computer, read it!\n");
+	//return main1();
+	//return main2();
+}
+
