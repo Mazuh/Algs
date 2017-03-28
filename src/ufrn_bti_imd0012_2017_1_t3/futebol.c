@@ -23,10 +23,12 @@
 
 
 /* Aux function: 1 if both are equals, 0 otherwise */
-int strAreEquals(char str1[], char str2[]){
+int strAreEquals(char str1[], char str2[], int maxSize){
 	int i;
-	for (i = 0; i < FULL_STR_SIZE; i++){
-		if(str1[i] != str2[i]) return 0;
+	for (i = 0; i < maxSize; i++){
+		if(str1[i] != str2[i])
+			return 0; //printf("%c is different than %c at %d\n", str1[i], str2[i], i); }
+		//else printf("%c is equals to %c at %d\n", str1[i], str2[i], i);
 	}
 	return 1;
 }
@@ -44,13 +46,23 @@ float average(float g1, float g2){
 	else 		 return g1/g2;
 }
 
-/* Main function */
+/* Main function 
+
+INPUT SUGGESTION (presentation errors may happen if you just copy and paste, but I think the data will be processed just fine):
+
+3
+Milan 3 x 0 Barcelona
+Milan 3 x 3 Barcelona
+Vascao 8 x 4 Barcelona
+
+*/
 int main(){
 
 	int gamesQtt;
 
 	char table_names[TEAMS_QTT][FULL_STR_SIZE] = {"Vascao", "Barcelona", "Milan"};
-	float table_data[TEAMS_QTT][6]; /* access all [][i] values using i as a constant like COL_* */
+	int table_names_sizes[TEAMS_QTT] = {6, 9, 5}; /* real chars qtt of each string from table_names, excluding any null values */
+	float table_data[TEAMS_QTT][6]; /* access all [][k] values letting k assume a pre-proccessed constant COL_* */
 
 	int i, j;
 
@@ -84,16 +96,18 @@ int main(){
 		teamIndex1 = NULL_INDEX;
 		teamIndex2 = NULL_INDEX;
 		for (j = 0; j < TEAMS_QTT; j++){
-			if (strAreEquals(teamName1, table_names[j]))
+			if (strAreEquals(teamName1, table_names[j], table_names_sizes[j]))
 				teamIndex1 = j;
-			if (strAreEquals(teamName2, table_names[j]))
+			if (strAreEquals(teamName2, table_names[j], table_names_sizes[j]))
 				teamIndex2 = j;
 			if ((teamIndex1 != NULL_INDEX) && (teamIndex2 != NULL_INDEX))
 				break;
 		}
 
+		printf("(Procurando times... ");
 		if ((teamIndex1 == NULL_INDEX) && (teamIndex2 == NULL_INDEX)) return OS_ERROR_CODE;
 
+		printf("Processando... ");
 		/* now processing data table (so: high writing cost, but low reading cost) */
 		table_data[teamIndex1][COL_GOALS_SCORED]   += (float) teamScore1;
 		table_data[teamIndex1][COL_GOALS_TAKEN]    += (float) teamScore2;
@@ -109,12 +123,18 @@ int main(){
 		table_data[teamIndex2][COL_GOALS_BALANCES] += (float) (teamScore2 - teamScore1);
 		table_data[teamIndex2][COL_GOALS_AVERAGES]  = average(table_data[teamIndex2][COL_GOALS_SCORED], table_data[teamIndex2][COL_GOALS_TAKEN]);
 
+		printf("Pronto.)\n");
+
 		/* order by points, and then by goals balance, and then by alphabetical order */
 		/* TODO */
 
 	}
 
-
+	printf("\n(Imprimindo...)\n");
+	for (i = 0; i < TEAMS_QTT; i++){
+		printf("%d: %s\n", i, table_names[i]);
+	}
+	printf("(Pronto.)\n");
 
 	return 0;
 }
