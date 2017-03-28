@@ -5,6 +5,8 @@
 #define FULL_STR_SIZE 10
 #define NULL_INDEX -1
 #define OS_ERROR_CODE 666
+#define MARKED 1
+#define UNMARKED 0
 
 /* INTERN HIGH LEVEL CONSTANTS */ 
 #define TEAMS_QTT 3
@@ -27,8 +29,9 @@ int strAreEquals(char str1[], char str2[], int maxSize){
 	int i;
 	for (i = 0; i < maxSize; i++){
 		if(str1[i] != str2[i])
-			return 0; //printf("%c is different than %c at %d\n", str1[i], str2[i], i); }
-		//else printf("%c is equals to %c at %d\n", str1[i], str2[i], i);
+			return 0; 
+			//printf("%c is different than %c at %d\n", str1[i], str2[i], i); }
+		//else { printf("%c is equals to %c at %d\n", str1[i], str2[i], i); }
 	}
 	return 1;
 }
@@ -60,11 +63,11 @@ int main(){
 
 	int gamesQtt;
 
-	char table_names[TEAMS_QTT][FULL_STR_SIZE] = {"Vascao", "Barcelona", "Milan"};
-	int table_names_sizes[TEAMS_QTT] = {6, 9, 5}; /* real chars qtt of each string from table_names, excluding any null values */
-	float table_data[TEAMS_QTT][6]; /* access all [][k] values letting k assume a pre-proccessed constant COL_* */
+	char table_names[TEAMS_QTT][FULL_STR_SIZE] = {"Barcelona", "Milan", "Vascao"}; /* already ordered by alphabetical criterion */
+	int table_names_sizes[TEAMS_QTT] = {9, 5, 6}; /* real chars qtt of each string from table_names, excluding any null values */
+	float table_data[TEAMS_QTT][6]; /* access all [][n] values letting n assume a pre-proccessed numeric constant COL_* */
 
-	int i, j;
+	int i, j, k; /* variable indexes to access arrays */
 
 	/* restart all elements */
 	for (i = 0; i < TEAMS_QTT; i++){
@@ -83,10 +86,12 @@ int main(){
 	printf("\nQuantidade de jogos: ");
 	scanf("%d", &gamesQtt);
 
+	/* reading vars */
 	char teamName1[FULL_STR_SIZE], teamName2[FULL_STR_SIZE];
 	int teamScore1, teamScore2;
 	int teamIndex1, teamIndex2;
-
+	/* ordering vars */
+	float pointsAux[TEAMS_QTT] = {0, 0, 0}; /* auxiliar var to store points */
 
 	printf("\nResultados das %d partidas (ex: \"Vascao 1 x 3 Barcelona\"):\n", gamesQtt);
 	for (i = 0; i < gamesQtt; i++){
@@ -107,7 +112,7 @@ int main(){
 		printf("(Procurando times... ");
 		if ((teamIndex1 == NULL_INDEX) && (teamIndex2 == NULL_INDEX)) return OS_ERROR_CODE;
 
-		printf("Processando... ");
+		printf("Ok. Processando escrita... ");
 		/* now processing data table (so: high writing cost, but low reading cost) */
 		table_data[teamIndex1][COL_GOALS_SCORED]   += (float) teamScore1;
 		table_data[teamIndex1][COL_GOALS_TAKEN]    += (float) teamScore2;
@@ -123,17 +128,45 @@ int main(){
 		table_data[teamIndex2][COL_GOALS_BALANCES] += (float) (teamScore2 - teamScore1);
 		table_data[teamIndex2][COL_GOALS_AVERAGES]  = average(table_data[teamIndex2][COL_GOALS_SCORED], table_data[teamIndex2][COL_GOALS_TAKEN]);
 
-		printf("Pronto.)\n");
+		pointsAux[teamIndex1] = table_data[teamIndex1][COL_POINTS];
+		pointsAux[teamIndex2] = table_data[teamIndex2][COL_POINTS];
 
-		/* order by points, and then by goals balance, and then by alphabetical order */
-		/* TODO */
+		printf("Ok. Pronto.)\n");
 
 	}
 
-	printf("\n(Imprimindo...)\n");
+
+	
+	/* order by points [, and then by goals balance, and then by alphabetical order] */
+	int classification[TEAMS_QTT] = {0, 1, 2}; /* c[index]==value; where index is the descending ordinary position; and value is the team ID for table_* */
+	float aux;
+	int leftIndex, rightIndex, swapped;
+
+	printf("\n(Classificando... ");
+	do{
+		swapped = 0;
+		for (i = 1; i < TEAMS_QTT; i++){
+			leftIndex = i-1;
+			rightIndex = i;
+			if (pointsAux[leftIndex] < pointsAux[rightIndex]){
+				aux = pointsAux[leftIndex];
+				pointsAux[leftIndex] = pointsAux[rightIndex];
+				pointsAux[rightIndex] = aux;
+				swapped = 1;
+			}
+		}
+	} while (swapped);
+
+	printf("Ok. Imprimindo...)\n");
+	
 	for (i = 0; i < TEAMS_QTT; i++){
 		printf("%d: %s\n", i, table_names[i]);
 	}
+
+	for (i = 0; i < TEAMS_QTT; i++){
+		printf("%do lugar tem %f pontos.\n", i, pointsAux[i]);
+	}
+
 	printf("(Pronto.)\n");
 
 	return 0;
