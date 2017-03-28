@@ -33,9 +33,9 @@ int strAreEquals(char str1[], char str2[]){
 
 /* Generate an amount of points gained by a team who scored g1 goals and taken g2 goals */
 float points(int g1, int g2){
-	if      (g1 > g2) 	return PT_PER_VICTORY
-	else if (g1 == g2)  return PT_PER_DRAW
-	else 				return PT_PER_DEFEAT
+	if      (g1 > g2) 	return PT_PER_VICTORY;
+	else if (g1 == g2)  return PT_PER_DRAW;
+	else 				return PT_PER_DEFEAT;
 }
 
 /* Gets the total of goals scored and taken (in this order) and generate the average for this team */
@@ -63,17 +63,23 @@ int main(){
 
 	/* start user interface */
 
-	printf("Quantidade de jogos: ");
+	printf("Times cadastrados:\n");
+	for (i = 0; i < TEAMS_QTT; i++){
+		printf("%d -> %s\n", i, table_names[i]);
+	}
+
+	printf("\nQuantidade de jogos: ");
 	scanf("%d", &gamesQtt);
 
 	char teamName1[FULL_STR_SIZE], teamName2[FULL_STR_SIZE];
 	int teamScore1, teamScore2;
 	int teamIndex1, teamIndex2;
-	
+
+
+	printf("\nResultados das %d partidas (ex: \"Vascao 1 x 3 Barcelona\"):\n", gamesQtt);
 	for (i = 0; i < gamesQtt; i++){
-		printf("Resultados das partidas:\n");
-		scanf(" %s %d x %d %s", teamName1, &teamScore1, teamName2, &teamScore2);
-		
+		scanf(" %s %d x %d %s", teamName1, &teamScore1, &teamScore2, teamName2);
+
 		/* finding team ids */
 		teamIndex1 = NULL_INDEX;
 		teamIndex2 = NULL_INDEX;
@@ -112,4 +118,3 @@ int main(){
 
 	return 0;
 }
-
