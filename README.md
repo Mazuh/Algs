@@ -1,5 +1,8 @@
-# Algoritmos
+# Algorithms
+## Learning never ends.
 
-Este repositório contém apenas algoritmos didáticos.
+This repository contains only educational algorithms.
 
-Os arquivos do diretório <a href="src/">src/</a> estão sob a licença MIT. No entanto, o conteúdo da pasta <a href="tcc/">tcc/</a> está disponível exclusivamente para visualização e, caso necessário, uma possivel citação de cunho científico com todo o rigor que a metodologia científica exige.
+The files in <a href="src/">src/</a> are under MIT License. The content in <a href="tcc/">tcc/</a>
+is available only for reading and, if necessary, a quotation using cientific method and giving the
+appropriate credits.

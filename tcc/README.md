@@ -1,5 +1,13 @@
-# Trabalho de Conclusão de Curso
+# Conclusion Report
+## Maintained for historical reasons.
 
-Alguns dos algoritmos do ../src/ foram feitos em prol de minha participação como bolsista do Conselho Nacional de Desenvolvimento Científico e Tecnológico (CNPq) de Apoio à Difusão de Conhecimento no Ensino Médio (ADC-B) no projeto "Treinamento de Estudantes do Nível Médio/Técnico para Competições de Programação" (2015~2016), relatado na íntegra como meu Trabalho de Conclusão de Curso (TCC) Técnico em Informática no Instituto Federal de Educação, Ciência e Tecnologia do Rio Grande do Norte (IFRN), Campus Natal - Zona Norte. 
+Some of the source code produced and stored in [../src/](../src/) directory was made
+during my High School for participating as an intern researcher at 
+[National Council of Cientific and Technological Development (CNPq)](http://cnpq.br/).
+My job was to promote a Diffusion of Knowledge in High School, helping to maintain a project
+called "Training of Students in High School for Programming Competitions", coordinated at
+[IFRN](http://portal.ifrn.edu.br/) by teacher [Bruno Sielly Jales da Costa](http://lattes.cnpq.br/2486327435960311)
+(doctored, member of IEEE societies about [Computational Intelligence](http://cis.ieee.org/) and [Systems, Man, and Cybernetics Society](http://www.ieeesmc.org/), IA researcher at [Ford](https://www.ford.com.br/)).
 
-O relatório produzido está em ./TCC.pdf.
+This [report](./TCC.pdf) was my final work that earned me an IT Technician Degree,
+after the approval of an examining board in 2016/03/23 and right before I went to college.

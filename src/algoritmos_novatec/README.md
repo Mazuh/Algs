@@ -1,8 +1,8 @@
-# Algoritmos e Programação
-## Teoria e Prática
+# Algoritmos e Programação: Teoria e Prática
+## Algorithms and Programming: Theory and Practice _(free translation)_
 
-Resoluções próprias em C dos exercícios propostos pelo livro.
+Own solutions for proposed exercises from this book.
 
-- Autoria: Marco Medina e Cristina Fertig.
-- Editora: Novatec, São Paulo, SP.
-- Edição: 2ª, 2005.
+- Authors: Marco Medina e Cristina Fertig.
+- Publishing: Novatec, São Paulo, SP.
+- Edition: 2nd, 2005.
