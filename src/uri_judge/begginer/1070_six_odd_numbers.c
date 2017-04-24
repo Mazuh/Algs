@@ -6,18 +6,13 @@ https://www.urionlinejudge.com.br/judge/en/problems/view/1070
 
 int main(){
 
-    int x, printedQtt;
+    int num;
+    scanf("%d", &num);
 
-    scanf("%d", &x);
-
-    printedQtt = 0;
-    do {
-        if (x % 2){ // if 'mod' result is 1, then it's an odd number
-            printf("%d\n", x);
-            printedQtt++;
-        }
-        x++;
-    } while(printedQtt < 6);
+    int i;
+    for (i = (num % 2) ? num : ++num; i <= num+10; i += 2){
+        printf("%d\n", i);
+    }
 
     return 0;
 }
