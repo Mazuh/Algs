@@ -9,7 +9,7 @@ int main(){
     int n;
     scanf("%d", &n);
 
-    int i = 0;
+    int i = 1;
 
     do{ // to find first divisor
         i++;
