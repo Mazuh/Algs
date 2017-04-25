@@ -44,11 +44,11 @@ Italo 48
 Daniel 11
 ```
 
+Cada bloco de exemplo antecede imediatamente sua saída de execução.
+
 ### Leitura
 
-* ```fgetc```:
-
-Lê caracter.
+* **```fgetc```: Lê caracter.**
 
 ```C
 char c1 = fgetc(arquivoDeEntrada);
@@ -58,9 +58,7 @@ printf("Foi lido '%c' e depois '%c'.\n", c1, c2);
 
 > Foi lido 'Y' e depois 'u'.
 
-* ```fgets```:
-
-Lê linha de caracteres.
+* **```fgets```: Lê linha de caracteres.**
 
 ```C
 char string[20];
