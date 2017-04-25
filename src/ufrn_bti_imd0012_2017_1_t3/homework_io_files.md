@@ -22,45 +22,61 @@ rodapé constantes (mas que ficarão implícitos para manter os exemplos enxutos
 #include <stdio.h>
 
 int main(){
+    FILE *arquivoDeEntrada = fopen("pontos.txt", "r");
+    
     /* Qualquer bloco de exemplo deve ser inserido aqui. */
+    
     return 0;
 }
 ```
 
-Também está sendo considerada a presença de arquivos de texto qualquer.
+Condicionais de segurança e integridade (algo que se aproxime de _tratamento de exceções_)
+foram propositalmente removidas também, por fins didáticos.
+
+Também está sendo considerada a presença de um arquivo de texto,
+no mesmo diretório, chamado ```pontos.txt```, cujo conteúdo é:
+
+```
+Douglas 20
+Marcell 16
+```
 
 ### Leitura
 
 * ```fgetc```
-    Lê caracter.
+Lê caracter.
+
+Exemplo:
+
+```C
+char c1 = fgetc(arquivoDeEntrada);
+char c2 = fgetc(arquivoDeEntrada);
+printf("Foi lido '%c' e depois '%c'.\n", c1, c2);
+```
+Saída:
+
+> Foi lido 'D' e depois 'o'.
 
 * ```fgets```
-    Lê linha de caracteres.
+Lê linha de caracteres.
 
 * ```fscanf```:
-    Lê dados usando formatação.
+Lê dados usando formatação.
 
 * ```vfscanf```:
-    Lê dados usando formatação e armazena em uma lista variável de argumentos.
-
-* ```fread```:
-    Lê bloco de dados.
+Lê dados usando formatação e armazena em uma lista variável de argumentos.
 
 ### Escrita
 
 * ```fputc```
-    Write character to stream
-    Escreve caracter.
+Escreve caracter.
 
 * ```fputs```
-    Write string to stream
-    Escreve linha de caracteres..
+Escreve linha de caracteres..
 
 * ```fprintf```:
-    Escreve dados na transmissão usando formatação.
+Escreve dados na transmissão usando formatação.
 
 * ```vfprintf```:
-    Escreve dados de uma lista variável de argumentos.
+Escreve dados de uma lista variável de argumentos.
 
-* ```fwrite```:
-    Escreve bloco de dados.
