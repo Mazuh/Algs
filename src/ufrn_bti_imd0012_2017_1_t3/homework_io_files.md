@@ -46,7 +46,8 @@ Daniel 11
 
 ### Leitura
 
-* ```fgetc```
+* ```fgetc```:
+
 Lê caracter.
 
 ```C
@@ -57,7 +58,8 @@ printf("Foi lido '%c' e depois '%c'.\n", c1, c2);
 
 > Foi lido 'Y' e depois 'u'.
 
-* ```fgets```
+* ```fgets```:
+
 Lê linha de caracteres.
 
 ```C
