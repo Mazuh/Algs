@@ -23,14 +23,20 @@ rodapé constantes (mas que ficarão implícitos para manter os exemplos enxutos
 
 int main(){
     FILE *arquivoDeEntrada = fopen("pontos.txt", "r");
+	FILE *arquivoDeEntrada2 = fopen("iniciais.txt", "r");
+	FILE *arquivoDeEntrada2 = fopen("saida.txt", "w");
     
     /* Qualquer bloco de exemplo deve ser inserido aqui. */
     
+    
+	fclose(arquivoDeEntrada);
+	fclose(arquivoDeEntrada2);
+
     return 0;
 }
 ```
 
-Condicionais de segurança e integridade (algo que se aproxime de _tratamento de exceções_)
+Condicionais de segurança e integridade (algo que se aproxime de _tratamento de exceções_ e memória)
 foram propositalmente removidas também, por fins didáticos.
 
 Também está sendo considerada a presença de um arquivo de texto,
@@ -44,7 +50,19 @@ Italo 48
 Daniel 11
 ```
 
-Cada bloco de exemplo antecede imediatamente sua saída de execução.
+E outro, chamado ```iniciais.txt``` cujo conteúdo é:
+
+```
+MG
+DB
+```
+
+Ainda, há um último arquivo, sempre vazio, chamado ```saida.txt```:
+```
+
+```
+
+Cada bloco de exemplo antecederá imediatamente sua saída de execução.
 
 ### Leitura
 
@@ -83,8 +101,19 @@ printf("E %s marcou %d pontos!\n", nome, pontos);
 >
 > E Douglas marcou 25 pontos!
 
-* ```vfscanf```:
-Lê dados usando formatação e armazena em uma lista variável de argumentos.
+* **```fread```: Lê um bloco de dados.**
+
+```C
+char buffer[5];
+
+// tentará ler 5 dados, cada um possuindo o tamanho de 1 byte
+// note que o fim da linha (ENDL) é considerado um caracter tambm
+fread(buffer, sizeof buffer, 1, arquivoDeEntrada2);
+
+printf("As letras iniciais eram '%c' e '%c'.\n", buffer[0], buffer[3]);
+```
+
+> As letras iniciais eram 'M' e 'D'.
 
 ### Escrita
 
