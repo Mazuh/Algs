@@ -49,30 +49,22 @@ Daniel 11
 * ```fgetc```
 Lê caracter.
 
-Exemplo:
-
 ```C
 char c1 = fgetc(arquivoDeEntrada);
 char c2 = fgetc(arquivoDeEntrada);
 printf("Foi lido '%c' e depois '%c'.\n", c1, c2);
 ```
 
-Saída:
-
 > Foi lido 'Y' e depois 'u'.
 
 * ```fgets```
 Lê linha de caracteres.
-
-Exemplo:
 
 ```C
 char string[20];
 fgets (string, 5, arquivoDeEntrada);
 printf("Foi lida parte da primeira linha: \"%s\".\n", string);
 ```
-
-Saída:
 
 > Foi lida parte da primeira linha: "Yuri".
 
