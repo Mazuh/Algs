@@ -110,9 +110,9 @@ printf("E %s marcou %d pontos!\n", nome, pontos);
 ```C
 char buffer[5];
 
-// tentará ler 5 dados, cada um possuindo o tamanho de 1 byte
+// diz que cada dado é de 1 byte, e tentará ler 5 deles
 // note que o fim da linha (ENDL) é considerado um caracter também
-fread(buffer, sizeof buffer, 1, arquivoDeEntrada2);
+fread(buffer, 1, sizeof buffer, arquivoDeEntrada2);
 
 printf("As letras iniciais eram '%c' e '%c'.\n", buffer[0], buffer[3]);
 ```
