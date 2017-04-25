@@ -68,18 +68,20 @@ printf("Foi lida parte da primeira linha: \"%s\".\n", string);
 
 > Foi lida parte da primeira linha: "Yuri".
 
-* ```fscanf```:
-Lê dados usando formatação.
-
-Exemplo:
+* **```fscanf```: Lê dados usando formatação.**
 
 ```C
-
+char nome[20];
+int pontos;
+fscanf (arquivoDeEntrada, "%s %d", nome, &pontos);
+printf("%s marcou %d pontos!\n", nome, pontos);
+fscanf (arquivoDeEntrada, "%s %d", nome, &pontos);
+printf("E %s marcou %d pontos!\n", nome, pontos);
 ```
 
-Saída:
-
-> 
+> Yuri marcou 20 pontos!
+>
+> E Douglas marcou 25 pontos!
 
 * ```vfscanf```:
 Lê dados usando formatação e armazena em uma lista variável de argumentos.
