@@ -37,8 +37,11 @@ Também está sendo considerada a presença de um arquivo de texto,
 no mesmo diretório, chamado ```pontos.txt```, cujo conteúdo é:
 
 ```
-Douglas 20
-Marcell 16
+Yuri 20
+Douglas 25
+Marcell 19
+Italo 48
+Daniel 11
 ```
 
 ### Leitura
@@ -53,15 +56,38 @@ char c1 = fgetc(arquivoDeEntrada);
 char c2 = fgetc(arquivoDeEntrada);
 printf("Foi lido '%c' e depois '%c'.\n", c1, c2);
 ```
+
 Saída:
 
-> Foi lido 'D' e depois 'o'.
+> Foi lido 'Y' e depois 'u'.
 
 * ```fgets```
 Lê linha de caracteres.
 
+Exemplo:
+
+```C
+char string[20];
+fgets (string, 5, arquivoDeEntrada);
+printf("Foi lida parte da primeira linha: \"%s\".\n", string);
+```
+
+Saída:
+
+> Foi lida parte da primeira linha: "Yuri".
+
 * ```fscanf```:
 Lê dados usando formatação.
+
+Exemplo:
+
+```C
+
+```
+
+Saída:
+
+> 
 
 * ```vfscanf```:
 Lê dados usando formatação e armazena em uma lista variável de argumentos.
