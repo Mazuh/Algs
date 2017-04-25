@@ -23,14 +23,16 @@ rodapé constantes (mas que ficarão implícitos para manter os exemplos enxutos
 
 int main(){
     FILE *arquivoDeEntrada = fopen("pontos.txt", "r");
-	FILE *arquivoDeEntrada2 = fopen("iniciais.txt", "r");
-	FILE *arquivoDeEntrada2 = fopen("saida.txt", "w");
-    
+    FILE *arquivoDeEntrada2 = fopen("iniciais.txt", "r");
+    FILE *arquivoDeSaida = fopen("saida.txt", "w");
+    FILE *arquivoDeSaida2 = fopen("saida.bin", "wb");
+
     /* Qualquer bloco de exemplo deve ser inserido aqui. */
-    
-    
-	fclose(arquivoDeEntrada);
-	fclose(arquivoDeEntrada2);
+
+    fclose(arquivoDeEntrada);
+    fclose(arquivoDeEntrada2);
+    fclose(arquivoDeSaida);
+    fclose(arquivoDeSaida2);
 
     return 0;
 }
@@ -57,12 +59,14 @@ MG
 DB
 ```
 
-Ainda, há um último arquivo, sempre vazio, chamado ```saida.txt```:
+Há, ainda, dois últimos arquivos vazios chamado ```saida.txt``` e ```saida.bin```:
 ```
 
 ```
 
-Cada bloco de exemplo antecederá imediatamente sua saída de execução.
+Cada bloco de exemplo antecederá imediatamente sua saída de execução (nos
+exemplos de escrita, a saída será o conteúdo do arquivo, já nos exemplos
+de entrada, será a saída padrão).
 
 ### Leitura
 
@@ -107,7 +111,7 @@ printf("E %s marcou %d pontos!\n", nome, pontos);
 char buffer[5];
 
 // tentará ler 5 dados, cada um possuindo o tamanho de 1 byte
-// note que o fim da linha (ENDL) é considerado um caracter tambm
+// note que o fim da linha (ENDL) é considerado um caracter também
 fread(buffer, sizeof buffer, 1, arquivoDeEntrada2);
 
 printf("As letras iniciais eram '%c' e '%c'.\n", buffer[0], buffer[3]);
@@ -117,15 +121,37 @@ printf("As letras iniciais eram '%c' e '%c'.\n", buffer[0], buffer[3]);
 
 ### Escrita
 
-* ```fputc```
-Escreve caracter.
+* **```fputc```: Escreve caracter.**
 
-* ```fputs```
-Escreve linha de caracteres..
+```C
+fputc ('M', arquivoDeSaida);
+fputc ('G', arquivoDeSaida);
+fputc ('\n', arquivoDeSaida); // fim da linha (é necessário?)
+```
 
-* ```fprintf```:
-Escreve dados na transmissão usando formatação.
+> MG
 
-* ```vfprintf```:
-Escreve dados de uma lista variável de argumentos.
+* **```fputs```: Escreve linha de caracteres.**
 
+```C
+fputs("Marcell Guilherme\n", arquivoDeSaida);
+```
+
+> Marcell Guilherme
+
+* **```fprintf```: Escreve dados na transmissão usando formatação.**
+
+```C
+fprintf(arquivoDeSaida, "%s completa %d anos em %s.\n", "Marcell", 2017-1997, "junho");
+```
+
+> Marcell completa 20 anos em junho.
+
+* **```fwrite```: Escreve um bloco de dados.**
+
+```C
+char buffer[] = {'M', 'G', '\n'};
+fwrite (buffer , sizeof(char), sizeof(buffer), arquivoDeSaida2);
+```
+
+> MG
