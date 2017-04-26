@@ -10,4 +10,4 @@ called "Training of Students in High School for Programming Competitions", coord
 (doctored, member of IEEE societies about [Computational Intelligence](http://cis.ieee.org/) and [Systems, Man, and Cybernetics Society](http://www.ieeesmc.org/), IA researcher at [Ford](https://www.ford.com.br/)).
 
 This [report](./TCC.pdf) was my final work that earned me an IT Technician Degree,
-after the approval of an examining board in 2016/03/23 and right before I went to college.
+after the approval of an examining board in 2016/03/23 and right before I've gone to college.
