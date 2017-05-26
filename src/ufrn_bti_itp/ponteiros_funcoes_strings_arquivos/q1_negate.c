@@ -5,8 +5,8 @@ void negate(int *numbers, int n){
         numbers[i] = -numbers[i];
 }
 
-void printTestNegate(int *numbers, int n){
-    // "type" inputs and outputs their answer
+void printTest(int *numbers, int n){
+    // "type" inputs and output their answer
     printf("%d\n", n);
     for (int i = 0; i < n; i++)
         printf("%d ", numbers[i]);
@@ -23,7 +23,7 @@ int main(){
     int numbers1[8] = {2, 4, 7, -3, 9, 0, 0, 15};
     int n1 = 8;
     
-    printTestNegate(numbers1, n1);
+    printTest(numbers1, n1);
 
     return 0;
 }

@@ -5,9 +5,9 @@ void scalar(int coefficient, int *numbers, int n){
         numbers[i] = coefficient*numbers[i];
 }
 
-void printTestScalar(int coefficient, int *numbers, int n){
-    // "type" inputs and outputs their answer
-    printf("%d%d\n", n, coefficient);
+void printTest(int coefficient, int *numbers, int n){
+    // "type" inputs and output their answer
+    printf("%d %d\n", n, coefficient);
     for (int i = 0; i < n; i++)
         printf("%d ", numbers[i]);
     printf("\n");
@@ -24,7 +24,7 @@ int main(){
     int n1 = 8;
     int m1 = 3;
     
-    printTestScalar(m1, numbers1, n1);
+    printTest(m1, numbers1, n1);
 
     return 0;
 }
