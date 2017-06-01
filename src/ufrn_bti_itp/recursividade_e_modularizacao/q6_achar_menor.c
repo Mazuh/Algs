@@ -2,7 +2,7 @@
 
 
 int _findLower(int *vector, int lastIndex, int lowerUntilNow){
-		if (lastIndex == 0) {
+	if (lastIndex == 0) {
 		return lowerUntilNow;
 	} else{
 		int current = vector[--lastIndex];
