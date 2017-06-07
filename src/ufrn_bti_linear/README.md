@@ -1,5 +1,5 @@
-Álgebra Linear para Computação
-Linear Algebra for Computing
+# Álgebra Linear para Computação
+## Linear Algebra for Computing
 
 A thing or two learned in this class, re-created for educational purposes.
 
