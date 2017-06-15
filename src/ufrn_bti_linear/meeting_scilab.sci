@@ -54,3 +54,31 @@ inv(B)*inv(A)
 inv(A)*inv(B)
 inv(A*B) == inv(B)*inv(A) // apesar de visualmente iguais, o teste deu F, por quê?
 
+// xi
+x = inv(A)*b
+A*x-b // por que não deu nulo?
+
+// xii
+invAA = inv(AA) // matriz muito próxima, mas não exata
+AA*invAA // resultado muito esquisito
+invAA*AA // esquisitisse de novo, e diferente do anterior, o que é mais esquisito ainda!
+
+// xiii
+x = invAA*b
+AA*x-b // o valor de invAA não é exatamente o que deveria ser, por isso deu coisas esquisitas aqui
+
+// xiv
+b
+b' // o vetor coluna 4x1 virou um vetor linha 1x4
+b' * C // um vetor linha
+C' * b // deu o mesmo que b'*C, porém em vetor coluna (a transposta do resultado anterior)
+b * C' // erro de consistência, a multiplicação não pôde ser feita
+C * b' // a transposta de tal inconsistência acima também é inconsistente
+
+// xv
+F = B + B'
+G = C + C'
+F * G
+F' * G'
+G' * F'
+(F*G)' // foi igua à G' * F'
