@@ -82,3 +82,44 @@ F * G
 F' * G'
 G' * F'
 (F*G)' // foi igua à G' * F'
+
+// >>> 1
+
+A = rand(4, 4)
+b = [ 1 0 0 0 ]
+b=A\x
+rank(A)
+invA = inv(A)
+invA*b
+rref(A)
+[L, U, P] = lu(A)
+
+// v
+det(eye(10,10)) == 1
+kernel(A)
+trace(A)
+
+// >>> 5
+
+B = rand(4,4)
+I = (eye(4,4))
+x = inv(B) * I(:, 1)
+invB = inv(B)
+invB(:,1) == x // deu certo!
+B*x(:,1) - I(:,1)
+rref(B)
+[L, U, P] = lu(B)
+
+// >>> 6
+
+rank(B)
+invB // já havia feito antes
+invB*B == B*invB // F, os resultados são muito esquisitos devido à falta de precisão, e bem diferentes de eye(4,4)
+
+// >>> 7
+
+A = rand(100,100); B = rand(100, 100); tic; A*B; toc // no máximo 5ms
+A = rand(200,200); B = rand(200, 200); tic; A*B; toc // no máximo 13 ou 16ms
+A = rand(1000,1000); B = rand(1000, 1000); tic; A*B; toc // 1s
+A = rand(10000,10000); B = rand(10000, 10000); tic; A*B; toc // erro de memória stack
+
