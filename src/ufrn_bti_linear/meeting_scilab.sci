@@ -123,3 +123,39 @@ A = rand(200,200); B = rand(200, 200); tic; A*B; toc // no máximo 13 ou 16ms
 A = rand(1000,1000); B = rand(1000, 1000); tic; A*B; toc // 1s
 A = rand(10000,10000); B = rand(10000, 10000); tic; A*B; toc // erro de memória stack
 
+// >>> 8
+
+function x=triaginf(L,b)
+    n = size(L,1);
+    x = zeros(n,1);
+    x(1)=b(1)/L(1,1);
+    for i=1:n
+        x(i)=(b(i) - L(i,1:i-1)*x(1:i-1))/L(i,i);
+    end
+endfunction
+
+M = [1 2 3 4; 5 6 7 8; 9 10 11 12; 13 14 15 16]
+b = [1; 0; 0; 0]
+x = triaginf(M,b)
+
+// >>> 9
+
+function [L,U] = lu0006(A)
+    n=size(A,1);
+    U = A;
+    L = eye(n,n);
+    for j=1:n-1
+        if abs(U(j,j)) < 10^(-12), 'Pivô nulo atrapalhou', break, end
+        b = 1/U(j,j);
+        for i=j+1:n
+            L(i,j) = b*U(i,j);
+            U(i,j:n) = U(i,j:n) - L(i,j)*U(j,j:n);
+        end
+    end
+endfunction
+
+A = rand(5,5)
+[L,U] = lu0006(A)
+
+B = [1 1 3 2 0; 2 1 3 1 2; 1 2 6 5 0; 0 1 4 0 1; 0 0 0 0 2]
+[L,U] = lu0006(B)
