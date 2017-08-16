@@ -1,3 +1,4 @@
 *.exe
 *.sh
 *.o
+.Rproj.user
