@@ -1,1 +1,1 @@
-./Release/main.cpp.o ./Release/bidimensional.cpp.o
+./Release/main.cpp.o ./Release/bidimensional.cpp.o ./Release/tridimensional.cpp.o
