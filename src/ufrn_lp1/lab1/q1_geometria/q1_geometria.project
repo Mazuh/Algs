@@ -98,5 +98,7 @@
     <File Name="bidimensional.h"/>
     <File Name="tridimensional.h"/>
     <File Name="tridimensional.cpp"/>
+    <File Name="geometryfactory.h"/>
+    <File Name="geometryabstract.h"/>
   </VirtualDirectory>
 </CodeLite_Project>

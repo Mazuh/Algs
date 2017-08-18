@@ -1,24 +1,7 @@
 #ifndef BIDIMENSIONAL_H
 #define BIDIMENSIONAL_H
 
-/**
- * @brief Definição base de todas as figuras planas.
- */
-class BidimensionalEntity{
-public:
-    /**
-     * @brief Usa os atributos da figura pra calcular sua área 
-     * e retorna o resultado
-     */
-    virtual double calcArea() = 0;
-    
-    /**
-     * @brief Usa os atributos da figura pra calcular seu perímetro
-     * e retorna o resultado
-     */
-    virtual double calcPerimeter() = 0;
-};
-
+#include "geometryabstract.h"
 
 /**
  * @brief Figura fechada formada por três lados (congruentes entre si)

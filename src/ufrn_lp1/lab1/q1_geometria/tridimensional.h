@@ -1,23 +1,7 @@
 #ifndef TRIDIMENSIONAL_H
 #define TRIDIMENSIONAL_H
 
-/**
- * @brief Definição base de todas as figuras espaciais
- */
-class TridimensionalEntity{
-public:
-    /**
-     * @brief Usa os atributos do corpo pra calcular sua área de superfície 
-     * das faces e retorna o resultado
-     */
-    virtual double calcArea() = 0;
-    
-    /**
-     * @brief Usa os atributos do corpo pra calcular seu volume
-     */
-    virtual double calcVolume() = 0;
-};
-
+#include "geometryabstract.h"
 
 /**
  * @brief Figura composta por uma base quadrangular e um vértice que une
