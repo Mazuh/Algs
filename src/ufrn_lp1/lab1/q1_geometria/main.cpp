@@ -8,6 +8,6 @@ using std::endl;
  * @brief Implementação da função principal do programa
  */
 int main(){
-    cout << "Hello there." << endl;
+    GeometryFactory::runCli();
     return 0;
 }

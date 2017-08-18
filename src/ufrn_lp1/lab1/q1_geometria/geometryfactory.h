@@ -2,56 +2,56 @@
 #define GEOMETRYFACTORY_H
 
 #include "geometryabstract.h"
-#include "bidimensional.h"
-#include "tridimensional.h"
+
 
 /**
  * @brief Opções de objetos bidimensionais para solicitar à fábrica
  */
-enum class BidimensionalEntities{
-    EQUILATERAL_TRIANGLE,
+enum BidimensionalEntities{
+    EQUILATERAL_TRIANGLE = 1,
     RECTANGLE,
     SQUARE,
     CIRCLE
 };
 
+
 /**
  * @brief Opções de objetos tridimensionais para solicitar à fábrica
  */
-enum class TridimensionalEntities{
-    RECTANGULAR_PYRAMID,
+enum TridimensionalEntities{
+    RECTANGULAR_PYRAMID = 1,
     CUBE,
     PARALLELEPIPED,
     SPHERE
 };
 
+
 /**
  * @brief Cria facilmente instâncias de figuras geométricas através de
- * uma interface por linha de comando (cli).
+ * uma interface por linha de comando (cli)
  */
 class GeometryFactory{
+private:
+    GeometryFactory();
 public:
-    /**
-     * @brief Inicia a interação e persiste até que o usuário saia, compilando
-     * toda a rotina: mostra opções, cria objetos e imprime os cálculos.
-     */
-    static void runCli();
 
     /**
-     * @brief Mostra as opções para a dimensão do espaço do objeto geométrico,
-     * onde cada opção tem
+     * @brief Inicia a interação e persiste até que o usuário saia, compilando
+     * toda a rotina: mostra opções de criação, os cria e imprime os cálculos
      */
-    static TridimensionalEntities promptMenuSelection();
+    static void runCli();
     
     /**
-     * @brief Abre perguntas a criação de instância de figura geométrica plana
+     * @brief Questiona ao usuário os atributos para criação da instância da
+     * figura geométrica espacial escolhida
      */
-    static TridimensionalEntity *promptTridimensionalCreation(TridimensionalEntities choice);
+    static TridimensionalEntity *prompt3DCreation(TridimensionalEntities choice);
     
     /**
-     * @brief Abre perguntas a criação de instância de figura geométrica plana
+     * @brief Questiona ao usuário os atributos para criação da instância da
+     * figura geométrica plana escolhida
      */
-    static BidimensionalEntity *promptBidimensionalCreation(BidimensionalEntities choice);
+    static BidimensionalEntity *prompt2DCreation(BidimensionalEntities choice);
 };
 
 #endif
