@@ -1,11 +1,13 @@
-#include <stdio.h>
-#include "bidimensional.h"
-#include "tridimensional.h"
+#include <iostream>
+#include "geometryfactory.h"
+
+using std::cout;
+using std::endl;
 
 /**
  * @brief Implementação da função principal do programa
  */
 int main(){
-    printf("Olá mundo!\n");
+    cout << "Hello there." << endl;
     return 0;
 }
