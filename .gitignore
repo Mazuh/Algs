@@ -1,6 +1,5 @@
 *.exe
 *.bin
-*.sh
 *.o
 
 .Rproj.user
